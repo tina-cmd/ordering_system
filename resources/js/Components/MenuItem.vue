@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white border border-gray-300 shadow-sm rounded-md p-4 flex flex-col items-center justify-between hover:shadow-lg transition duration-200 ease-in-out w-full">
       <img
-        src="../../../storage/app/public/uploads/istockphoto-458464735-612x612.jpg"
+        src="../../../storage/app/public/uploads/download.jpg"
         :alt="item.name"
         class="w-full h-48 object-cover rounded-md mb-4"
       />
