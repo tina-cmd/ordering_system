@@ -14,7 +14,6 @@ class CashierController extends Controller
     {
         $orders = DB::table('restaurant.orders')
             ->where('paid', 'Unpaid')
-            ->where('status', 'Pending')
             ->get();
         // dd($orders);
 
@@ -44,7 +43,10 @@ class CashierController extends Controller
             }
 
             // Return success and redirect back to cashier page with flash data
-            return Inertia::render(route('cashier'))->with('success', 'Order marked as paid successfully.');
+            session()->flash('success', 'Order is paid.');
+
+            // Redirect using Inertia location
+            return Inertia::location(route('cashier'));
 
         } catch (QueryException $e) {
 
